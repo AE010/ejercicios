@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 df= pd.read_csv('./EstadisticaDescriptiva/housing.csv')
 
@@ -18,3 +19,11 @@ print('desviacion estandar de años: ', std_age)
 
 filtrodeloceano = df[df['ocean_proximity']=="ISLAND"]#filtrar
 print('Filtro de proximidad: ', filtrodeloceano)
+
+plt.scatter(df["ocean_proximity"][:10], df["median_house_value"][:10])
+
+plt.xlabel('Proximidad')
+plt.ylabel('Precio')
+
+plt.title('Grafico de Dispersion de Proximidad del oceano vs Precio')
+plt.show()
